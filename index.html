@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="tictactoe">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Tic-tac-toe</title>
+        
+        <link rel="stylesheet" href="lib/bootstrap-3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/bootstrap-3.3.6/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="style/principal.css">
+    </head>
+    <body ng-controller="gamecontroller">
+     
+      <div class="container game-container">
+       <h1 class="title_princ">Tic Tac Toe</h1>
+       <div class="cell_box" ng-repeat="cell in cells track by $index" ng-click="drawMark($index)">
+           {{cell}}
+       </div>
+       <br>
+       <br>
+       <br>
+       <div class="reset" ng-click="clearBoard()">New Game</div>
+      </div>
+       
+    <div class="container results-block">
+        <div class="row">
+            <div class="player-one col-md-6">
+                <input class="input_name" type="text" id="p1_id" ng-model="player1" ng-init="player1 = 'Player 1'" ng-click="setName1(player1)">
+                <p id="p1_score">{{playerOneScore}}</p>
+                <p id="playerOneMessage">{{playerOneMessage}}</p>
+            </div>
+
+            <div class="player-two col-md-6">
+                <input class="input_name" type="text" id="p2_id" ng-model="player2" ng-init="player2 = 'Player 2'" ng-click="setName2(player2)">
+                <p id="p1_score">{{playerTwoScore}}</p>
+                <p id="playerTwoMessage">{{playerTwoMessage}}</p>
+            </div>
+        </div>
+      </div>
+        
+    
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/jquery-1.12.0.min.js"></script>
+        <script src="lib/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+        <script src="lib/app.tictactoe.js"></script>
+    </body>
+</html>
