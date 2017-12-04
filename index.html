@@ -13,13 +13,14 @@
      
       <div class="container game-container">
        <h1 class="title_princ">Tic Tac Toe</h1>
+        <!-- Every cell that will contain an X or O-->
        <div class="cell_box" ng-repeat="cell in cells track by $index" ng-click="drawMark($index)">
            {{cell}}
        </div>
        <br>
        <br>
        <br>
-       <div class="reset" ng-click="clearBoard()">New Game</div>
+       <div class="reset" ng-click="clearBoard()">Reset</div>
       </div>
        
     <div class="container results-block">
